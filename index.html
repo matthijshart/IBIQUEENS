@@ -1,1 +1,1008 @@
 
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ibiza · 18–20 mei 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;1,9..144,300;1,9..144,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bone: #f4ede1;
+    --sand: #e8dcc4;
+    --sand-deep: #d9c9a8;
+    --terracotta: #c97b56;
+    --terracotta-deep: #a55d3e;
+    --olive: #6b6b3e;
+    --ink: #2a1f17;
+    --ink-soft: #5a4a3e;
+    --ink-faint: #8a7a6e;
+    --line: rgba(42, 31, 23, 0.15);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 300;
+    background: var(--bone);
+    color: var(--ink);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.4'/%3E%3C/svg%3E");
+    opacity: 0.06;
+    pointer-events: none;
+    z-index: 1000;
+    mix-blend-mode: multiply;
+  }
+
+  .mono {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    letter-spacing: 0.32em;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+  }
+
+  /* HERO */
+  .hero {
+    height: 100vh;
+    min-height: 640px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background-image: url('img/cala-jondal.jpeg');
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    animation: kenburns 25s ease-in-out infinite alternate;
+  }
+
+  @keyframes kenburns {
+    0% { transform: scale(1.05) translate(0, 0); }
+    100% { transform: scale(1.18) translate(-2%, -1%); }
+  }
+
+  .hero-bg::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(42,31,23,0.25) 0%, rgba(42,31,23,0.1) 50%, rgba(244,237,225,0.5) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--bone);
+    padding: 0 2rem;
+    animation: fadeUp 1.6s cubic-bezier(0.2, 0.8, 0.2, 1) both;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-overline {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+  }
+
+  .hero h1 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(3.8rem, 12vw, 10rem);
+    line-height: 0.92;
+    letter-spacing: -0.045em;
+    text-shadow: 0 2px 40px rgba(0,0,0,0.25);
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+  }
+
+  .hero-dates {
+    margin-top: 2.5rem;
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.92;
+    letter-spacing: 0.02em;
+  }
+
+  .hero-divider {
+    width: 1px;
+    height: 60px;
+    background: var(--bone);
+    margin: 2.5rem auto 0;
+    opacity: 0.6;
+    animation: pulse 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.4; }
+    50% { opacity: 0.8; }
+  }
+
+  /* INTRO */
+  .intro {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 8rem 2rem 4rem;
+    text-align: center;
+  }
+
+  .intro .mono {
+    color: var(--terracotta-deep);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .intro h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(1.85rem, 3.5vw, 2.6rem);
+    line-height: 1.25;
+    margin-bottom: 2rem;
+    color: var(--ink);
+    letter-spacing: -0.02em;
+  }
+
+  .intro h2 em {
+    font-style: italic;
+    color: var(--terracotta-deep);
+  }
+
+  .intro p {
+    font-size: 1.05rem;
+    color: var(--ink-soft);
+    max-width: 580px;
+    margin: 0 auto 1.2rem;
+  }
+
+  /* DAY OVERVIEW NAV */
+  .day-nav {
+    max-width: 900px;
+    margin: 4rem auto 6rem;
+    padding: 0 2rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .day-nav a {
+    padding: 2rem 1rem;
+    text-align: center;
+    text-decoration: none;
+    color: var(--ink);
+    border-right: 1px solid var(--line);
+    transition: background 0.4s ease;
+    display: block;
+  }
+
+  .day-nav a:last-child { border-right: none; }
+
+  .day-nav a:hover {
+    background: var(--sand);
+  }
+
+  .day-nav .num {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 2rem;
+    color: var(--terracotta-deep);
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .day-nav .label {
+    font-family: 'Fraunces', serif;
+    font-size: 0.95rem;
+    color: var(--ink-soft);
+  }
+
+  /* DAY SECTIONS */
+  .day {
+    padding: 5rem 2rem 3rem;
+    position: relative;
+  }
+
+  .day-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .day-header {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 2.5rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .day-header-line {
+    height: 1px;
+    background: var(--line);
+  }
+
+  .day-number-block {
+    text-align: center;
+  }
+
+  .day-number-block .mono {
+    color: var(--terracotta-deep);
+    margin-bottom: 0.6rem;
+    display: block;
+  }
+
+  .day-number-block .day-num {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: 4.5rem;
+    line-height: 0.9;
+    color: var(--ink);
+    font-style: italic;
+  }
+
+  .day-title-row {
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 4rem;
+    margin-bottom: 4rem;
+    align-items: end;
+  }
+
+  .day-title-row h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2.2rem, 4.5vw, 4rem);
+    line-height: 1.02;
+    letter-spacing: -0.035em;
+  }
+
+  .day-title-row h2 em {
+    font-style: italic;
+    color: var(--terracotta-deep);
+  }
+
+  .day-title-row .day-intro {
+    color: var(--ink-soft);
+    font-size: 1rem;
+    line-height: 1.75;
+    padding-bottom: 0.4rem;
+  }
+
+  .day-image {
+    width: 100%;
+    height: clamp(360px, 52vh, 560px);
+    margin-bottom: 5rem;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .day-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 2s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+
+  .day-image:hover img { transform: scale(1.04); }
+
+  .day-image .caption {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1.75rem;
+    color: var(--bone);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.95rem;
+    text-shadow: 0 1px 12px rgba(0,0,0,0.5);
+  }
+
+  /* TIMELINE */
+  .timeline {
+    display: grid;
+    grid-template-columns: 110px 1fr;
+    gap: 0;
+    max-width: 880px;
+    margin: 0 auto;
+  }
+
+  .timeline-item { display: contents; }
+
+  .timeline-time {
+    grid-column: 1;
+    padding: 1.6rem 1.5rem 1.6rem 0;
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.05rem;
+    color: var(--terracotta-deep);
+    border-right: 1px solid var(--line);
+    position: relative;
+    text-align: right;
+    font-style: italic;
+  }
+
+  .timeline-time::after {
+    content: '';
+    position: absolute;
+    right: -5px;
+    top: 1.95rem;
+    width: 9px;
+    height: 9px;
+    background: var(--terracotta);
+    border-radius: 50%;
+    border: 2px solid var(--bone);
+  }
+
+  .timeline-content {
+    grid-column: 2;
+    padding: 1.6rem 0 1.6rem 2rem;
+    border-bottom: 1px solid var(--line);
+  }
+
+  .timeline-item:last-child .timeline-content {
+    border-bottom: none;
+  }
+
+  .timeline-content h3 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 1.25;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.01em;
+  }
+
+  .timeline-content .where {
+    font-size: 0.78rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-faint);
+    margin-bottom: 0.6rem;
+  }
+
+  .timeline-content p {
+    color: var(--ink-soft);
+    font-size: 0.97rem;
+    line-height: 1.7;
+  }
+
+  .timeline-content .tag {
+    display: inline-block;
+    margin-top: 0.7rem;
+    padding: 0.25rem 0.7rem;
+    background: var(--sand);
+    color: var(--terracotta-deep);
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-size: 0.82rem;
+    border-radius: 2px;
+  }
+
+  /* DAY ACCENT IMAGES */
+  .accent-img {
+    width: 100%;
+    height: clamp(280px, 40vh, 420px);
+    margin: 4rem 0;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .accent-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* QUOTE BREAK */
+  .quote-break {
+    text-align: center;
+    padding: 5rem 2rem;
+    max-width: 760px;
+    margin: 0 auto;
+  }
+
+  .quote-break .mono {
+    color: var(--terracotta-deep);
+    margin-bottom: 2rem;
+    display: block;
+  }
+
+  .quote-break blockquote {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    font-weight: 300;
+    font-size: clamp(1.5rem, 2.8vw, 2.2rem);
+    line-height: 1.35;
+    color: var(--ink);
+    letter-spacing: -0.015em;
+  }
+
+  .quote-break blockquote::before,
+  .quote-break blockquote::after {
+    content: '—';
+    color: var(--terracotta);
+    margin: 0 0.8rem;
+    font-style: normal;
+  }
+
+  /* PRACTICAL */
+  .practical {
+    background: var(--sand);
+    padding: 6rem 2rem;
+    margin-top: 4rem;
+    position: relative;
+  }
+
+  .practical-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .practical-header {
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+
+  .practical-header .mono {
+    color: var(--terracotta-deep);
+    margin-bottom: 1.5rem;
+    display: block;
+  }
+
+  .practical-header h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-size: clamp(2rem, 4vw, 3rem);
+    letter-spacing: -0.02em;
+  }
+
+  .practical-header h2 em {
+    font-style: italic;
+    color: var(--terracotta-deep);
+  }
+
+  .practical-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2.5rem 4rem;
+  }
+
+  .practical-item {
+    border-top: 1px solid rgba(42, 31, 23, 0.2);
+    padding-top: 1.5rem;
+  }
+
+  .practical-item h4 {
+    font-family: 'Fraunces', serif;
+    font-weight: 400;
+    font-size: 1.15rem;
+    margin-bottom: 0.4rem;
+    letter-spacing: -0.005em;
+  }
+
+  .practical-item h4 em {
+    font-style: italic;
+    color: var(--terracotta-deep);
+  }
+
+  .practical-item .meta {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--ink-soft);
+    font-size: 0.92rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .practical-item p {
+    color: var(--ink-soft);
+    font-size: 0.93rem;
+    line-height: 1.65;
+  }
+
+  .practical-item a {
+    color: var(--terracotta-deep);
+    text-decoration: none;
+    border-bottom: 1px solid var(--terracotta);
+  }
+
+  /* FOOTER */
+  .footer {
+    background: var(--ink);
+    color: var(--bone);
+    padding: 5rem 2rem 3rem;
+    text-align: center;
+  }
+
+  .footer h2 {
+    font-family: 'Fraunces', serif;
+    font-weight: 300;
+    font-style: italic;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .footer p {
+    color: var(--sand);
+    opacity: 0.75;
+    font-size: 0.92rem;
+    max-width: 460px;
+    margin: 0 auto 2rem;
+  }
+
+  .footer .signature {
+    font-family: 'Fraunces', serif;
+    font-style: italic;
+    color: var(--terracotta);
+    font-size: 0.95rem;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(244, 237, 225, 0.15);
+  }
+
+  /* MOBILE */
+  @media (max-width: 720px) {
+    .hero { min-height: 560px; }
+    .intro { padding: 5rem 1.5rem 3rem; }
+    .day { padding: 3.5rem 1.25rem 2rem; }
+
+    .day-header {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    .day-header-line { display: none; }
+
+    .day-title-row {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .day-image { margin-bottom: 3rem; }
+
+    .timeline { grid-template-columns: 75px 1fr; }
+    .timeline-time {
+      padding: 1.2rem 1rem 1.2rem 0;
+      font-size: 0.95rem;
+    }
+    .timeline-content { padding: 1.2rem 0 1.2rem 1.2rem; }
+    .timeline-content h3 { font-size: 1.2rem; }
+
+    .day-nav { grid-template-columns: 1fr; }
+    .day-nav a {
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+    }
+    .day-nav a:last-child { border-bottom: none; }
+
+    .practical-grid {
+      grid-template-columns: 1fr;
+      gap: 2rem;
+    }
+
+    .practical { padding: 4rem 1.5rem; }
+
+    .quote-break blockquote::before,
+    .quote-break blockquote::after { display: block; margin: 0.5rem 0; }
+  }
+
+  /* ON-SCROLL REVEAL */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease, transform 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-content">
+    <div class="hero-overline">een drie-daagse</div>
+    <h1>Ibiza<br><em>en wij drie</em></h1>
+    <div class="hero-dates">18 — 20 mei 2026</div>
+    <div class="hero-divider"></div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="intro">
+  <span class="mono">welkom</span>
+  <h2>Drie dagen, drie ritmes — <em>zee, dorp, eiland.</em></h2>
+  <p>We landen maandag vroeg, halen de auto op en duiken meteen het eiland in. Ses Boques voor lunch, Es Vedrà in de verte, en 's avonds dwalen we door Dalt Vila. Dinsdag is voor het binnenland en eindigt bij Benirràs, met de zon die in zee zakt boven Elements. Woensdag nemen we de hippiemarkt mee en sluiten af bij Aiyanna, voordat het vliegtuig ons weer ophaalt.</p>
+  <p>Geen haast. Goed eten. Mooie plekken.</p>
+</section>
+
+<!-- NAV -->
+<nav class="day-nav">
+  <a href="#dag-1">
+    <span class="num">i.</span>
+    <span class="label">Maandag — zuidkust &amp; oude stad</span>
+  </a>
+  <a href="#dag-2">
+    <span class="num">ii.</span>
+    <span class="label">Dinsdag — binnenland &amp; sunset</span>
+  </a>
+  <a href="#dag-3">
+    <span class="num">iii.</span>
+    <span class="label">Woensdag — markt &amp; vertrek</span>
+  </a>
+</nav>
+
+<!-- DAG 1 -->
+<section class="day" id="dag-1">
+  <div class="day-inner">
+    <div class="day-header">
+      <div class="day-header-line"></div>
+      <div class="day-number-block">
+        <span class="mono">dag een</span>
+        <div class="day-num">i.</div>
+      </div>
+      <div class="day-header-line"></div>
+    </div>
+
+    <div class="day-title-row">
+      <h2>Maandag,<br><em>aankomst aan</em><br>de zuidkust.</h2>
+      <p class="day-intro">We landen vroeg en pakken de auto. Eerst koffie en croissants in de oude stad, dan langs Cala Jondal naar het beroemde uitzicht over Es Vedrà. Een lange lunch bij Ses Boques onder de kliffen van Es Cubells, daarna eindeloos zonnen op Es Cavallet. Als de zon zakt rijden we naar Dalt Vila — wandelen door witgekalkte straatjes en dineren in een tuin met lichtjes.</p>
+    </div>
+
+    <div class="day-image">
+      <img src="img/es-vedra.jpeg" alt="Es Vedrà">
+      <div class="caption">— uitzicht over Es Vedrà</div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-time">09:30</div>
+        <div class="timeline-content">
+          <h3>Croissant Show</h3>
+          <div class="where">Ibiza Stad · Plaça de la Constitució</div>
+          <p>Onze landing-ontbijt. Een Frans-aangezicht aan de poort van Dalt Vila, op een van de mooiste pleinen van de stad. Sterke koffie, krokante croissants, en een eerste blik op het kasteel boven ons.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">11:00</div>
+        <div class="timeline-content">
+          <h3>Cala Jondal</h3>
+          <div class="where">Sant Josep · korte stop</div>
+          <p>We rijden langs Cala Jondal voor een eerste blik op het turquoise. Geen lange stop — even kijken, foto, doorrijden.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">12:00</div>
+        <div class="timeline-content">
+          <h3>Cala d'Hort &amp; Es Vedrà</h3>
+          <div class="where">het iconische uitzicht</div>
+          <p>De rots die uit zee rijst. We nemen het bovenste uitkijkpunt voor de foto, lopen daarna naar het strandje beneden. Magisch, ook al ben je er eerder geweest.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">14:00</div>
+        <div class="timeline-content">
+          <h3>Lunch · Ses Boques</h3>
+          <div class="where">Es Cubells · onder de kliffen</div>
+          <p>Verstopt baaitje, voeten bijna in zee. Verse vis, eenvoudige kaart, geen poespas. De weg ernaartoe is bochtig — dat hoort erbij.</p>
+          <span class="tag">gereserveerd</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">16:30</div>
+        <div class="timeline-content">
+          <h3>La Escollera &amp; Es Cavallet</h3>
+          <div class="where">Salinas · het naturisten-eind</div>
+          <p>Een drankje aan zee bij La Escollera, dan handdoek uit en languit op het zand. Het mooiste strand-uur is de late middag, met de zoutpannen aan de overkant.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">19:30</div>
+        <div class="timeline-content">
+          <h3>Dalt Vila</h3>
+          <div class="where">Ibiza Stad · de oude vesting</div>
+          <p>Door de poort de oude stad in, langzaam de stenen treden op. Het avondlicht op de witte muren is de moeite waard. Naar boven voor het uitzicht over de haven.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">21:00</div>
+        <div class="timeline-content">
+          <h3>Diner · La Brasa</h3>
+          <div class="where">Ibiza Stad · onder de bomen</div>
+          <p>Vlees op houtskool in een tuin met lichtjes, vlak naast Dalt Vila. De plek waar de stad even ophoudt.</p>
+          <span class="tag">reserveren</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACCENT IMAGE -->
+<div class="accent-img">
+  <img src="img/dalt-vila-night.jpeg" alt="Dalt Vila bij nacht">
+</div>
+
+<!-- QUOTE BREAK -->
+<section class="quote-break">
+  <span class="mono">tussendoor</span>
+  <blockquote>Eind mei is het eiland nog van zichzelf. Geen drukte, geen rijen — alleen rustige stranden, lege wegen, en avonden die net warm genoeg zijn.</blockquote>
+</section>
+
+<!-- DAG 2 -->
+<section class="day" id="dag-2">
+  <div class="day-inner">
+    <div class="day-header">
+      <div class="day-header-line"></div>
+      <div class="day-number-block">
+        <span class="mono">dag twee</span>
+        <div class="day-num">ii.</div>
+      </div>
+      <div class="day-header-line"></div>
+    </div>
+
+    <div class="day-title-row">
+      <h2>Dinsdag,<br><em>het binnenland</em><br>en de sunset.</h2>
+      <p class="day-intro">Een rustige ochtend op het strand voor de deur, dan landinwaarts. Santa Gertrudis voor het plein en de galerietjes, Sant Joan voor het witte kerkje. We stoppen voor een lunch onderweg en zwemmen 's middags ergens in het noorden — Cala Xarraca of Portinatx. De dag eindigt bij Benirràs, waar we eten bij Elements terwijl de zon in zee zakt.</p>
+    </div>
+
+    <div class="day-image">
+      <img src="img/cala-vibe.jpeg" alt="Strand vibe">
+      <div class="caption">— de noordbaaien, eind van de middag</div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-time">09:00</div>
+        <div class="timeline-content">
+          <h3>Cala Vadella</h3>
+          <div class="where">voor de deur · ontbijt aan zee</div>
+          <p>Lekker laat, koffie aan het strand, een paar uur niets doen. Het is vakantie.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">12:00</div>
+        <div class="timeline-content">
+          <h3>Santa Gertrudis</h3>
+          <div class="where">het binnenland · plein &amp; galerietjes</div>
+          <p>Klein wit dorpje midden op het eiland. Het plein is van iedereen, de galerietjes zijn open, en bij Bar Costa hangen de schilderijen die kunstenaars als betaling lieten.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">13:30</div>
+        <div class="timeline-content">
+          <h3>Sant Joan</h3>
+          <div class="where">het noorden · met lichte lunch</div>
+          <p>Nog kleiner, nog stiller. Witgekalkte kerk, een klein plein, een paar terrassen. We eten lichtjes en lopen rond.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">15:30</div>
+        <div class="timeline-content">
+          <h3>Cala Xarraca of Portinatx</h3>
+          <div class="where">de noordkust · zwemmen</div>
+          <p>Twee uur op het zand in een baai die je uit een ansichtkaart trekt. Helder water, weinig mensen.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">18:00</div>
+        <div class="timeline-content">
+          <h3>Cala Benirràs</h3>
+          <div class="where">de iconische hippiebaai</div>
+          <p>Aankomst voor sunset. Drankje met voeten in het zand, baai verkennen. De baai waar de drumcirkels gehouden worden — ook door de week is de vibe ongeëvenaard.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">20:30</div>
+        <div class="timeline-content">
+          <h3>Diner · Elements Benirràs</h3>
+          <div class="where">aan zee · sunset rond 21:15</div>
+          <p>Eten met een eerste rij plek voor de zonsondergang. We blijven hangen tot het donker wordt.</p>
+          <span class="tag">reserveren</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ACCENT IMAGE -->
+<div class="accent-img">
+  <img src="img/dalt-vila-day.jpeg" alt="Dalt Vila overdag">
+</div>
+
+<!-- DAG 3 -->
+<section class="day" id="dag-3">
+  <div class="day-inner">
+    <div class="day-header">
+      <div class="day-header-line"></div>
+      <div class="day-number-block">
+        <span class="mono">dag drie</span>
+        <div class="day-num">iii.</div>
+      </div>
+      <div class="day-header-line"></div>
+    </div>
+
+    <div class="day-title-row">
+      <h2>Woensdag,<br><em>één markt</em><br>en een laatste lunch.</h2>
+      <p class="day-intro">We zijn vroeg op, ontbijten op het strand voor de deur, en pakken de koffers in. Daarna rijden we naar Es Canar voor Punta Arabí — de grootste hippiemarkt van het eiland, vijfhonderd kraampjes onder de palmen. Lunch bij Aiyanna in Cala Nova, vijf minuten verderop. En dan, met zout in ons haar, terug naar het vliegveld.</p>
+    </div>
+
+    <div class="day-image">
+      <img src="img/market.jpeg" alt="Hippiemarkt Punta Arabí">
+      <div class="caption">— Punta Arabí, alleen op woensdagen</div>
+    </div>
+
+    <div class="timeline">
+
+      <div class="timeline-item">
+        <div class="timeline-time">08:30</div>
+        <div class="timeline-content">
+          <h3>Ontbijt op het strand</h3>
+          <div class="where">Cala Vadella · laatste keer</div>
+          <p>Eén laatste keer aan het water voor de deur. Daarna inpakken en uitchecken, alles in de auto.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">11:00</div>
+        <div class="timeline-content">
+          <h3>Punta Arabí</h3>
+          <div class="where">Es Canar · alleen op woensdag</div>
+          <p>De grootste hippiemarkt van Ibiza, vijfhonderd kraampjes verspreid over heuveltjes onder palmen. Sieraden, kleren, leer, keramiek, dingen die je nergens anders ziet. Twee uur is genoeg voor de sfeer.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">13:00</div>
+        <div class="timeline-content">
+          <h3>Lunch · Aiyanna</h3>
+          <div class="where">Cala Nova · 5 min van de markt</div>
+          <p>Onze laatste lunch op het eiland. Aan het strand, gezond, mooi. Een goed afsluitend uur voor we de auto inleveren.</p>
+          <span class="tag">reserveren · 13:00</span>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">14:30</div>
+        <div class="timeline-content">
+          <h3>Naar het vliegveld</h3>
+          <div class="where">via tankstation Sant Jordi</div>
+          <p>Tank vol vlak voor het vliegveld, auto inleveren, security. Ruim op tijd voor de vlucht van 17:15.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item">
+        <div class="timeline-time">17:15</div>
+        <div class="timeline-content">
+          <h3>Vlucht terug</h3>
+          <div class="where">Eivissa Aeroport</div>
+          <p>Adios Ibiza. Tot een volgende keer.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- PRACTICAL -->
+<section class="practical">
+  <div class="practical-inner">
+    <div class="practical-header">
+      <span class="mono">het regelwerk</span>
+      <h2>Reserveringen <em>&amp; tips</em></h2>
+    </div>
+
+    <div class="practical-grid">
+
+      <div class="practical-item">
+        <h4>Ses Boques <em>· lunch</em></h4>
+        <div class="meta">maandag 14:00 — gereserveerd</div>
+        <p>Bochtige weg naar beneden. Niets zichtbaars in de auto laten staan, parkeren in het zicht van het restaurant.</p>
+      </div>
+
+      <div class="practical-item">
+        <h4>La Brasa <em>· diner</em></h4>
+        <div class="meta">maandag 21:00 — reserveren</div>
+        <p>Vlak naast Dalt Vila. Vraag een tafel in de tuin met de bomen.</p>
+      </div>
+
+      <div class="practical-item">
+        <h4>Elements Benirràs <em>· diner</em></h4>
+        <div class="meta">dinsdag 20:30 — reserveren</div>
+        <p>Vraag expliciet om een sunset-tafel met zicht op zee. Tip: kom een uur eerder voor een drankje op het zand.</p>
+      </div>
+
+      <div class="practical-item">
+        <h4>Aiyanna Ibiza <em>· lunch</em></h4>
+        <div class="meta">woensdag 13:00 — reserveren</div>
+        <p>Geef bij reserveren door dat we om 14:30 weg moeten voor de vlucht.</p>
+      </div>
+
+      <div class="practical-item">
+        <h4>Punta Arabí markt</h4>
+        <div class="meta">woensdag · 10:00 – 18:00</div>
+        <p>Alleen op woensdagen. Betaald parkeren ongeveer €4. Cash meenemen — niet alle kraampjes pinnen.</p>
+      </div>
+
+      <div class="practical-item">
+        <h4>Auto &amp; tanken</h4>
+        <div class="meta">altijd handig</div>
+        <p>Tankstation in Sant Jordi vlak voor het vliegveld is je beste optie. Huurautobedrijven rekenen woekerprijzen voor brandstof.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <h2>tot maandag.</h2>
+  <p>Niet vergeten: zwemkleren in handbagage voor het geval de koffers later komen.</p>
+  <div class="signature">— Matthijs · mei 2026</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.day-image, .accent-img, .timeline-item, .practical-item, .quote-break').forEach(el => {
+    el.classList.add('reveal');
+    observer.observe(el);
+  });
+</script>
+
+</body>
+</html>
