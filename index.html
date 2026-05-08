@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#2a1f17">
+<meta name="theme-color" content="#c8362b">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="Ibiza '26">
@@ -15,16 +15,18 @@
 <link rel="preload" as="image" href="IBIZA.jpeg">
 <style>
   :root {
-    --bone: #f4ede1;
-    --sand: #e8dcc4;
-    --sand-deep: #d9c9a8;
-    --terracotta: #c97b56;
-    --terracotta-deep: #a55d3e;
-    --olive: #6b6b3e;
-    --ink: #2a1f17;
-    --ink-soft: #5a4a3e;
-    --ink-faint: #8a7a6e;
-    --line: rgba(42, 31, 23, 0.15);
+    --bone: #f5ead0;
+    --sand: #ebdbb6;
+    --sand-deep: #e0cb9a;
+    --terracotta: #c8362b;
+    --terracotta-deep: #9c2820;
+    --olive: #8a9d6e;
+    --sky: #7fb8db;
+    --sky-deep: #3d7ea1;
+    --ink: #2d1a18;
+    --ink-soft: #5a3a35;
+    --ink-faint: #9c7e75;
+    --line: rgba(45, 26, 24, 0.15);
     --safe-top: env(safe-area-inset-top, 0px);
     --safe-bottom: env(safe-area-inset-bottom, 0px);
     --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
@@ -70,7 +72,7 @@
     display: block;
     height: 100%;
     width: var(--progress, 0%);
-    background: linear-gradient(90deg, var(--terracotta), var(--terracotta-deep));
+    background: linear-gradient(90deg, var(--terracotta), var(--sky-deep));
     transition: width 0.1s linear;
   }
   .chapter-pill {
@@ -78,7 +80,7 @@
     top: calc(0.9rem + var(--safe-top));
     left: 50%;
     transform: translateX(-50%) translateY(-160%);
-    background: rgba(244, 237, 225, 0.85);
+    background: rgba(245, 234, 208, 0.85);
     -webkit-backdrop-filter: blur(14px) saturate(140%);
     backdrop-filter: blur(14px) saturate(140%);
     border: 1px solid var(--line);
@@ -142,8 +144,8 @@
     position: absolute;
     inset: 0;
     background:
-      linear-gradient(180deg, rgba(42,31,23,0.5) 0%, rgba(42,31,23,0.15) 40%, rgba(244,237,225,0.55) 100%),
-      radial-gradient(ellipse at center, transparent 35%, rgba(42,31,23,0.3) 100%);
+      linear-gradient(180deg, rgba(45,26,24,0.5) 0%, rgba(45,26,24,0.15) 40%, rgba(245,234,208,0.55) 100%),
+      radial-gradient(ellipse at center, transparent 35%, rgba(45,26,24,0.3) 100%);
   }
   .hero-content {
     position: relative;
@@ -499,7 +501,7 @@
     gap: 2rem 4rem;
   }
   .practical-item {
-    border-top: 1px solid rgba(42, 31, 23, 0.2);
+    border-top: 1px solid rgba(45, 26, 24, 0.2);
     padding-top: 1.3rem;
     transition: transform 0.5s var(--ease-out);
   }
@@ -558,7 +560,7 @@
     font-size: 0.92rem;
     margin-top: 2.5rem;
     padding-top: 1.8rem;
-    border-top: 1px solid rgba(244, 237, 225, 0.15);
+    border-top: 1px solid rgba(245, 234, 208, 0.15);
   }
   .reveal {
     opacity: 0;
